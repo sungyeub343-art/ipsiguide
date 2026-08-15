@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPSIGuide | 입시 컨설팅 & 전략 코칭</title>
+    <meta
+      name="description"
+      content="수시, 정시, 면접, 제시문, 인터뷰까지 입시 전 과정을 설계하는 IPSIGuide의 컨설팅 홈페이지입니다."
+    />
+    <meta property="og:title" content="IPSIGuide | 입시 컨설팅 & 전략 코칭" />
+    <meta
+      property="og:description"
+      content="나에게 맞는 전형 전략, 면접 준비, 제시문 해석, 인터뷰 코칭까지 체계적으로 준비해드립니다."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --navy-900: #0f1d3d;
+        --navy-800: #163469;
+        --blue-600: #1e5fe8;
+        --blue-500: #2f73ff;
+        --sky-100: #ecf5ff;
+        --sky-200: #dfeeff;
+        --gold-400: #f7c65f;
+        --gold-500: #f3ba3b;
+        --gray-50: #f6f8fc;
+        --gray-100: #edf2fb;
+        --gray-200: #dfe7f5;
+        --gray-400: #8a94aa;
+        --gray-600: #545d70;
+        --gray-800: #1d2433;
+        --white: #ffffff;
+        --success: #19a974;
+        --shadow: 0 20px 50px rgba(19, 35, 68, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        background: linear-gradient(180deg, #f6f9ff 0%, #f2f6fd 100%);
+        color: var(--gray-800);
+        line-height: 1.7;
+      }
+
+      a { text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      ul { list-style: none; margin: 0; padding: 0; }
+      p { margin: 0; }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: rgba(15, 29, 61, 0.96);
+        color: var(--white);
+        font-size: 13px;
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 42px;
+      }
+
+      .topbar-text {
+        opacity: 0.85;
+      }
+
+      .topbar-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .topbar-links a {
+        color: var(--white);
+        opacity: 0.85;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(17, 28, 51, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 82px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--navy-900);
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--navy-800), var(--blue-500));
+        display: grid;
+        place-items: center;
+        color: var(--white);
+        font-size: 14px;
+      }
+
+      .brand-text {
+        font-size: 20px;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-text span {
+        color: var(--blue-500);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gray-600);
+      }
+
+      .nav-links a {
+        color: var(--gray-600);
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 15px;
+        transition: 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--blue-500), var(--navy-800));
+        color: var(--white);
+        box-shadow: 0 18px 30px rgba(35, 80, 202, 0.22);
+      }
+
+      .btn-primary:hover { transform: translateY(-2px); }
+
+      .btn-secondary {
+        background: var(--white);
+        color: var(--navy-800);
+        border-color: var(--gray-200);
+      }
+
+      .phone-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+        padding: 14px 26px;
+        border-radius: 12px;
+        border: 1px solid rgba(47, 115, 255, 0.2);
+        background: linear-gradient(135deg, rgba(47, 115, 255, 0.12), rgba(19, 35, 68, 0.04));
+        color: var(--navy-900);
+        font-weight: 800;
+        font-size: 15px;
+        box-shadow: 0 12px 28px rgba(47, 115, 255, 0.12);
+        width: 100%;
+        max-width: 420px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .phone-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 32px rgba(47, 115, 255, 0.18);
+      }
+
+      .phone-icon {
+        display: inline-grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue-500), var(--navy-800));
+        color: var(--white);
+        font-size: 14px;
+        box-shadow: 0 8px 18px rgba(47, 115, 255, 0.28);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top left, rgba(47, 115, 255, 0.18), transparent 24%),
+          linear-gradient(135deg, #f7faff 0%, #ebf4ff 52%, #eef7ff 100%);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 32px;
+        padding: 90px 0 80px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(30, 95, 232, 0.08);
+        color: var(--blue-600);
+        border: 1px solid rgba(30, 95, 232, 0.12);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .hero-copy h1 {
+        margin: 0;
+        font-size: clamp(2.4rem, 5vw, 4.3rem);
+        line-height: 1.04;
+        letter-spacing: -0.06em;
+        color: var(--navy-900);
+      }
+
+      .hero-copy h1 .highlight {
+        color: var(--blue-500);
+      }
+
+      .hero-copy p {
+        margin-top: 18px;
+        max-width: 620px;
+        color: var(--gray-600);
+        font-size: 1.08rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .meta-item {
+        min-width: 150px;
+      }
+
+      .meta-item strong {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--navy-900);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .meta-item span {
+        color: var(--gray-600);
+        font-size: 14px;
+      }
+
+      .hero-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(242,247,255,0.96));
+        border: 1px solid rgba(31, 57, 103, 0.1);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      .sheet {
+        background: linear-gradient(135deg, #0f1d3d 0%, #163469 50%, #1d4ca7 100%);
+        border-radius: 22px;
+        padding: 20px;
+        color: var(--white);
+      }
+
+      .sheet-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .sheet-tag {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.14);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .sheet-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: rgba(247, 198, 95, 0.18);
+        font-size: 20px;
+      }
+
+      .student-box {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .student-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .student-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .student-pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(25, 169, 116, 0.15);
+        color: #bfead8;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .student-score {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .score-pill {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 12px 8px;
+        text-align: center;
+      }
+
+      .score-pill strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .score-pill span {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      .floating-note {
+        position: absolute;
+        right: -18px;
+        bottom: 18px;
+        background: var(--white);
+        box-shadow: 0 18px 35px rgba(31, 57, 103, 0.14);
+        border: 1px solid rgba(13, 30, 65, 0.08);
+        border-radius: 18px;
+        padding: 14px 18px;
+        font-size: 13px;
+        color: var(--gray-600);
+      }
+
+      .floating-note strong {
+        display: block;
+        color: var(--navy-900);
+        font-size: 1.2rem;
+        margin-bottom: 2px;
+      }
+
+      section {
+        padding: 30px 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .kicker {
+        color: var(--blue-600);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        font-size: 12px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(1.9rem, 2.4vw, 3rem);
+        letter-spacing: -0.04em;
+        color: var(--navy-900);
+      }
+
+      .section-copy {
+        color: var(--gray-600);
+        max-width: 560px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .feature-card {
+        background: rgba(255,255,255,0.7);
+        border: 1px solid rgba(17, 28, 51, 0.06);
+        border-radius: 22px;
+        padding: 26px 22px;
+        box-shadow: 0 12px 24px rgba(17, 28, 51, 0.04);
+      }
+
+      .feature-icon {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--sky-200), rgba(30, 95, 232, 0.14));
+        color: var(--blue-600);
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+        color: var(--navy-900);
+      }
+
+      .feature-card p {
+        color: var(--gray-600);
+        font-size: 15px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .service-card {
+        background: var(--white);
+        border: 1px solid rgba(17, 28, 51, 0.08);
+        border-radius: 22px;
+        padding: 26px 22px;
+        box-shadow: 0 10px 22px rgba(17, 28, 51, 0.04);
+      }
+
+      .service-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 14px;
+      }
+
+      .service-badge {
+        background: rgba(30, 95, 232, 0.08);
+        color: var(--blue-600);
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 10px;
+      }
+
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--navy-900), var(--blue-500));
+        color: var(--white);
+        font-size: 22px;
+      }
+
+      .service-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.35rem;
+        color: var(--navy-900);
+      }
+
+      .service-card p {
+        color: var(--gray-600);
+        margin-bottom: 18px;
+        font-size: 15px;
+      }
+
+      .service-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .service-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--gray-600);
+        font-size: 14px;
+      }
+
+      .service-list li::before {
+        content: '✓';
+        color: var(--success);
+        font-weight: 800;
+      }
+
+      .process-wrap {
+        background: linear-gradient(180deg, rgba(19, 35, 68, 0.96), rgba(25, 48, 90, 0.96));
+        border-radius: 28px;
+        padding: 36px 20px;
+        color: var(--white);
+      }
+
+      .process-wrap .kicker,
+      .process-wrap h2,
+      .process-wrap .section-copy {
+        color: var(--white);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .process-step {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.09);
+        border-radius: 20px;
+        padding: 22px 18px;
+      }
+
+      .step-no {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--gold-500), #f9d36c);
+        color: var(--navy-900);
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+
+      .process-step h3 {
+        margin: 0 0 8px;
+        font-size: 1.15rem;
+      }
+
+      .process-step p {
+        color: rgba(255,255,255,0.8);
+        font-size: 14px;
+      }
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .roadmap-card {
+        background: rgba(255,255,255,0.82);
+        border: 1px solid rgba(17, 28, 51, 0.06);
+        border-radius: 24px;
+        padding: 26px 22px;
+      }
+
+      .roadmap-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 16px;
+      }
+
+      .roadmap-badge {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue-600);
+        background: rgba(30, 95, 232, 0.08);
+        padding: 7px 10px;
+        border-radius: 999px;
+      }
+
+      .roadmap-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+        color: var(--navy-900);
+      }
+
+      .roadmap-card ul {
+        display: grid;
+        gap: 10px;
+      }
+
+      .roadmap-card li {
+        position: relative;
+        padding-left: 18px;
+        color: var(--gray-600);
+        font-size: 15px;
+      }
+
+      .roadmap-card li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--blue-500);
+        font-weight: 800;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .info-card {
+        background: var(--white);
+        border: 1px solid rgba(17, 28, 51, 0.08);
+        border-radius: 22px;
+        padding: 24px 22px;
+      }
+
+      .info-card .icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(30, 95, 232, 0.12), rgba(47, 115, 255, 0.04));
+        color: var(--blue-600);
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .info-card h3 {
+        margin: 0 0 8px;
+        color: var(--navy-900);
+        font-size: 1.2rem;
+      }
+
+      .info-card p {
+        color: var(--gray-600);
+        font-size: 15px;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .quote-card {
+        background: var(--white);
+        border: 1px solid rgba(17, 28, 51, 0.08);
+        border-radius: 22px;
+        padding: 24px 22px;
+      }
+
+      .stars {
+        color: #f7c65f;
+        letter-spacing: 2px;
+        font-size: 18px;
+        margin-bottom: 14px;
+      }
+
+      .quote-card p {
+        color: var(--gray-600);
+        font-size: 15px;
+        margin-bottom: 18px;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--navy-900), var(--blue-500));
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      .person strong {
+        display: block;
+        font-size: 14px;
+        color: var(--navy-900);
+      }
+
+      .person span {
+        color: var(--gray-600);
+        font-size: 12px;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      details {
+        background: rgba(255,255,255,0.78);
+        border: 1px solid rgba(17, 28, 51, 0.08);
+        border-radius: 16px;
+        padding: 18px 20px;
+      }
+
+      summary {
+        cursor: pointer;
+        list-style: none;
+        font-weight: 700;
+        color: var(--navy-900);
+      }
+
+      details[open] summary {
+        margin-bottom: 10px;
+      }
+
+      details p {
+        color: var(--gray-600);
+        font-size: 15px;
+      }
+
+      .cta-band {
+        background: linear-gradient(135deg, #0f1d3d 0%, #1b4ba0 100%);
+        border-radius: 28px;
+        padding: 40px 24px;
+        text-align: center;
+        color: var(--white);
+        margin: 30px 0 40px;
+      }
+
+      .cta-band h2 {
+        color: var(--white);
+        margin-bottom: 12px;
+      }
+
+      .cta-band p {
+        color: rgba(255,255,255,0.82);
+        margin-bottom: 24px;
+      }
+
+      footer {
+        background: #0d1320;
+        color: rgba(255,255,255,0.7);
+        padding: 28px 0 36px;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: rgba(255,255,255,0.7);
+      }
+
+      @media (max-width: 980px) {
+        .hero-inner,
+        .feature-grid,
+        .service-grid,
+        .process-grid,
+        .card-grid,
+        .testimonial-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding-top: 60px;
+        }
+
+        .floating-note {
+          position: static;
+          margin-top: 16px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav-links,
+        .topbar-links,
+        .nav-cta {
+          display: none;
+        }
+
+        .topbar-inner {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .feature-grid,
+        .service-grid,
+        .process-grid,
+        .card-grid,
+        .testimonial-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          display: block;
+        }
+
+        .hero-copy h1 {
+          line-height: 1.12;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-text">입시 전략 설계부터 실전 대비까지, 학생 맞춤형 컨설팅</div>
+        <div class="topbar-links">
+          <a href="#service">컨설팅 소개</a>
+          <a href="#process">진행 방식</a>
+          <a href="#contact">상담 신청</a>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="IPSIGuide 홈">
+          <div class="brand-mark">I</div>
+          <div class="brand-text">IPSI<span>Guide</span></div>
+        </a>
+
+        <nav class="nav-links" aria-label="메인 메뉴">
+          <a href="#service">서비스</a>
+          <a href="#process">진행 프로세스</a>
+          <a href="#results">성과</a>
+          <a href="#faq">자주 묻는 질문</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-secondary" href="#contact">상담신청</a>
+          <a class="btn btn-primary" href="form.html">무료 진단</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow">입시의 방향을 정확하게 설계합니다</div>
+            <h1>
+              수시·정시,<br />
+              면접·제시문·인터뷰까지<br />
+              <span class="highlight">한 번에 준비하는 전략</span>
+            </h1>
+            <p>
+              학생의 성향, 내신, 활동, 목표 대학을 종합적으로 분석해 가장 현실적이고
+              효과적인 입시 로드맵을 제시합니다. 단순 정보 전달이 아니라, 실제 합격을
+              위한 실행형 컨설팅을 제공합니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="form.html">무료 입시 진단 신청</a>
+              <a class="btn btn-secondary" href="#service">서비스 자세히 보기</a>
+            </div>
+
+            <a class="phone-link" href="tel:01029283614">
+              <span class="phone-icon">☎</span>
+              010-2928-3614
+            </a>
+
+            <div class="hero-meta">
+              <div class="meta-item">
+                <strong>1,200+</strong>
+                <span>학생 맞춤형 컨설팅 경험</span>
+              </div>
+              <div class="meta-item">
+                <strong>96%</strong>
+                <span>상담 만족도</span>
+              </div>
+              <div class="meta-item">
+                <strong>4.9/5</strong>
+                <span>재상담 만족도</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="입시 진단 카드">
+            <div class="sheet">
+              <div class="sheet-top">
+                <span class="sheet-tag">학생 맞춤 전략</span>
+                <div class="sheet-badge">★</div>
+              </div>
+
+              <div class="student-box">
+                <div class="student-row">
+                  <div class="student-name">김민준 학생</div>
+                  <div class="student-pill">수시 집중 전략</div>
+                </div>
+
+                <div class="student-score">
+                  <div class="score-pill">
+                    <strong>3.7</strong>
+                    <span>내신</span>
+                  </div>
+                  <div class="score-pill">
+                    <strong>82</strong>
+                    <span>모의고사</span>
+                  </div>
+                  <div class="score-pill">
+                    <strong>5</strong>
+                    <span>지원군</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-note">
+              <strong>12주</strong>
+              현실적 입시 로드맵 설계
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Why IPSIGuide</div>
+              <h2>입시 준비의 핵심은 ‘올바른 방향’입니다</h2>
+            </div>
+            <p class="section-copy">
+              학생별 성향과 목표를 바탕으로 지원 전략을 설계하고, 발표·면접·서류까지
+              완성형으로 준비해드립니다.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">🧭</div>
+              <h3>맞춤형 진로 설계</h3>
+              <p>학생의 성향과 대학별 전형 특성을 반영해 전략적 지원 방향을 설정합니다.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>데이터 기반 분석</h3>
+              <p>내신, 수능, 활동, 경쟁률을 분석해 현실적인 합격 가능 범위를 제시합니다.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🎤</div>
+              <h3>면접 실전 코칭</h3>
+              <p>질문 응답 구성, 말하기 습관, 자기소개서 연결까지 실제 발표형 코칭을 합니다.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">📝</div>
+              <h3>서류/제시문 완성</h3>
+              <p>페이지 구성, 제시문 해석, 인터뷰 답변까지 학생의 강점을 드러낼 수 있게 돕습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Programs</div>
+              <h2>학생에게 필요한 입시 영역을 모두 커버합니다</h2>
+            </div>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="service-header">
+                <div class="service-badge">수시/정시</div>
+                <div class="service-icon">🎯</div>
+              </div>
+              <h3>입시 전략 설계</h3>
+              <p>학생의 학업 성과와 목표 대학을 기반으로 수시, 정시, 논술형 전형까지 최적안을 구성합니다.</p>
+              <ul class="service-list">
+                <li>지원 가능 대학 범위 정리</li>
+                <li>전형별 우위 분석</li>
+                <li>학기별 실행 계획 설계</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <div class="service-header">
+                <div class="service-badge">면접</div>
+                <div class="service-icon">🗣️</div>
+              </div>
+              <h3>면접/발표 코칭</h3>
+              <p>질문 대응 전략, 답변 구성, 말투와 태도까지 실전형 코칭으로 면접 자신감을 높입니다.</p>
+              <ul class="service-list">
+                <li>개인별 질문 리스트 제작</li>
+                <li>모의면접 반복 훈련</li>
+                <li>자기소개/학업역량 연결</li>
+              </ul>
+            </article>
+
+            <article class="service-card">
+              <div class="service-header">
+                <div class="service-badge">제시문</div>
+                <div class="service-icon">📚</div>
+              </div>
+              <h3>제시문 해석 & 분석</h3>
+              <p>논리 구조를 읽고 핵심 키워드를 정리하여, 시험장 안에서도 안정적으로 답안을 구성할 수 있게 합니다.</p>
+              <ul class="service-list">
+                <li>지문 구조 분석</li>
+                <li>요약 및 논점 정리</li>
+                <li>답안 작성 연습</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <div class="process-wrap">
+            <div class="section-head">
+              <div>
+                <div class="kicker">Process</div>
+                <h2>학생별 맞춤 로드맵으로 입시를 진행합니다</h2>
+              </div>
+              <p class="section-copy">
+                단기적인 점검이 아니라, 장기 전략을 함께 설계하며 단계별 실행을 관리합니다.
+              </p>
+            </div>
+
+            <div class="process-grid">
+              <div class="process-step">
+                <div class="step-no">01</div>
+                <h3>상담 및 분석</h3>
+                <p>학생의 학업 상태, 목표 대학, 강점과 약점을 진단합니다.</p>
+              </div>
+              <div class="process-step">
+                <div class="step-no">02</div>
+                <h3>전형 설계</h3>
+                <p>수시·정시·면접 등 전형별 전략을 현실적으로 조합합니다.</p>
+              </div>
+              <div class="process-step">
+                <div class="step-no">03</div>
+                <h3>자료 작성</h3>
+                <p>자기소개서, 자료 정리, 멘트 구성, 발표 구조를 체계적으로 만듭니다.</p>
+              </div>
+              <div class="process-step">
+                <div class="step-no">04</div>
+                <h3>실전 훈련</h3>
+                <p>모의면접, 발표 연습, 피드백을 반복하며 안정적인 결과를 만듭니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Roadmap</div>
+              <h2>입시 전체를 연결해주는 관리 방식</h2>
+            </div>
+          </div>
+
+          <div class="roadmap-grid">
+            <article class="roadmap-card">
+              <div class="roadmap-header">
+                <h3>학년별 로드맵</h3>
+                <span class="roadmap-badge">전체 전략</span>
+              </div>
+              <ul>
+                <li>고1: 진로 방향 설정 및 과목별 학습 전략 정리</li>
+                <li>고2: 활동 구성, 내신 관리, 수시 대비 계획 수립</li>
+                <li>고3: 지원 대학 정리, 실전 코칭, 면접/서류 집중 준비</li>
+              </ul>
+            </article>
+
+            <article class="roadmap-card">
+              <div class="roadmap-header">
+                <h3>실전 대비 계획</h3>
+                <span class="roadmap-badge">개인 맞춤</span>
+              </div>
+              <ul>
+                <li>전형별 발표 자료와 답안 구조 정리</li>
+                <li>모의면접 기반 피드백과 리허설 진행</li>
+                <li>지원서 작성, 질문 준비, 자기소개서 문맥 정리</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Support</div>
+              <h2>학생이 필요한 순간마다 함께합니다</h2>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <div class="icon">💬</div>
+              <h3>상담 기반 관리</h3>
+              <p>학생의 고민을 정확히 파악해 수시와 정시에 맞는 우선순위를 정리합니다.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">🧠</div>
+              <h3>답변 구성 코칭</h3>
+              <p>면접 질문과 제시문 답안 구조를 현실적이고 논리적으로 다듬어드립니다.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">📌</div>
+              <h3>실행 중심 플랜</h3>
+              <p>매주 체크리스트와 목표를 설정해 지속적으로 진행 상황을 점검합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="results">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Testimonials</div>
+              <h2>실제 학생들의 만족 후기</h2>
+            </div>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="quote-card">
+              <div class="stars">★★★★★</div>
+              <p>“처음에는 어떤 전형으로 가야 할지 막막했는데, 제 성향에 맞는 방향으로 정리해주셔서 설득력이 생겼습니다.”</p>
+              <div class="person">
+                <div class="avatar">고</div>
+                <div>
+                  <strong>고등학생 A</strong>
+                  <span>수시 전략 상담</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <div class="stars">★★★★★</div>
+              <p>“면접 질문에 대한 답변 구조를 잡아주셔서 발표가 훨씬 자연스러워졌고, 실제 시험에서도 자신감이 붙었습니다.”</p>
+              <div class="person">
+                <div class="avatar">박</div>
+                <div>
+                  <strong>고등학생 B</strong>
+                  <span>면접 코칭</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <div class="stars">★★★★★</div>
+              <p>“제시문 문맥을 정리하는 방식이 매우 체계적이어서, 서술형 답안 작성에서 막히는 부분이 많이 줄었습니다.”</p>
+              <div class="person">
+                <div class="avatar">최</div>
+                <div>
+                  <strong>고등학생 C</strong>
+                  <span>제시문 분석</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">FAQ</div>
+              <h2>자주 묻는 질문</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>입시 컨설팅은 어떤 학생에게 도움이 되나요?</summary>
+              <p>학습 방향이 모호한 학생, 목표 대학이 정해지지 않은 학생, 면접이나 서류 준비가 부족한 학생에게 큰 도움이 됩니다. 개인별 맞춤 전략을 통해 더 명확한 방향을 제시합니다.</p>
+            </details>
+            <details>
+              <summary>수시와 정시 중 어디에 집중해야 하나요?</summary>
+              <p>학생의 내신, 수능, 활동, 목표 대학 유형에 따라 다릅니다. 상담을 통해 현재 상황과 미래 가능성을 종합적으로 분석해 우선순위를 정합니다.</p>
+            </details>
+            <details>
+              <summary>면접과 제시문 대비는 어떻게 진행되나요?</summary>
+              <p>개인별 질문 리스트를 기반으로 모의면접, 답변 구조 훈련, 문맥 정리, 실전 연습을 반복하며 준비합니다.</p>
+            </details>
+            <details>
+              <summary>상담은 어떻게 신청하나요?</summary>
+              <p>하단의 상담 신청 폼을 작성해주시면 담당자가 연락드리고, 학생 맞춤형 진단과 상담 일정을 안내드립니다.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta-band">
+            <h2>지금 바로 나의 입시 전략을 점검해보세요</h2>
+            <p>무료 진단을 통해 현재 상황과 준비 수준을 확인하고, 가장 현실적인 방향을 함께 설계해드립니다.</p>
+            <a class="btn btn-primary" href="form.html">무료 진단 신청하기</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <strong style="color: #fff; display: block; margin-bottom: 6px;">IPSIGuide</strong>
+          입시 전략 설계와 실전 준비를 함께합니다.
+        </div>
+        <div class="footer-links">
+          <a href="#service">서비스</a>
+          <a href="#process">진행 방식</a>
+          <a href="#faq">FAQ</a>
+          <a href="form.html">상담 신청</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
