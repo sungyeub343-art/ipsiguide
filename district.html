@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지역별 입시 컨설팅 | IPSIGuide</title>
+    <meta name="description" content="지역별 맞춤 입시 전략과 면접·제시문 대비를 안내합니다." />
+    <style>
+      :root { --navy: #0f1d3d; --blue: #2f73ff; --sky: #eaf3ff; --ink: #1d2433; --muted: #5f6b80; --line: #dfe7f5; --white: #fff; --gold: #f3ba3b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: linear-gradient(180deg, #f7faff, #f1f6ff); line-height: 1.7; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1060px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar { padding: 11px 0; background: var(--navy); color: #fff; font-size: 13px; }
+      .topbar-inner, .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .topbar a { color: #fff; opacity: .85; }
+      header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.93); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(15,29,61,.08); }
+      .nav { min-height: 78px; }
+      .brand { display: flex; align-items: center; gap: 10px; color: var(--navy); font-weight: 800; font-size: 20px; }
+      .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--navy), var(--blue)); font-size: 14px; }
+      .brand span span { color: var(--blue); }
+      .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 14px; font-weight: 700; }
+      .hero { padding: 70px 0 58px; background: radial-gradient(circle at 90% 10%, rgba(47,115,255,.18), transparent 28%), linear-gradient(135deg, #f7faff, #eaf3ff); }
+      .crumb { color: var(--blue); font-size: 13px; font-weight: 800; }
+      h1 { margin: 15px 0 14px; max-width: 760px; color: var(--navy); font-size: clamp(2.1rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -.06em; }
+      .hero p { max-width: 690px; margin: 0; color: var(--muted); font-size: 1.06rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+      .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, var(--blue), #1b4ba0); color: #fff; font-weight: 800; box-shadow: 0 12px 24px rgba(47,115,255,.2); }
+      .button.secondary { border: 1px solid var(--line); background: #fff; color: var(--navy); box-shadow: none; }
+      main { padding: 45px 0 72px; }
+      .section-head { margin-bottom: 20px; }
+      h2 { margin: 0; color: var(--navy); font-size: clamp(1.65rem, 3vw, 2.4rem); letter-spacing: -.04em; }
+      .section-head p { margin: 8px 0 0; color: var(--muted); }
+      .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .service { padding: 22px; border: 1px solid rgba(15,29,61,.08); border-radius: 18px; background: rgba(255,255,255,.88); box-shadow: 0 12px 26px rgba(19,35,68,.05); }
+      .service-icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 15px; border-radius: 13px; background: var(--sky); color: var(--blue); font-size: 21px; }
+      .service h3 { margin: 0 0 7px; color: var(--navy); font-size: 1.1rem; }
+      .service p { margin: 0; color: var(--muted); font-size: 14px; }
+      .guide { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; margin-top: 45px; }
+      .panel { padding: 25px; border-radius: 20px; background: var(--navy); color: #fff; }
+      .panel h2 { color: #fff; font-size: 1.55rem; }
+      .panel p { color: rgba(255,255,255,.77); font-size: 14px; }
+      .check-list { display: grid; gap: 12px; margin: 18px 0 0; padding: 0; list-style: none; }
+      .check-list li { position: relative; padding-left: 22px; color: rgba(255,255,255,.87); font-size: 14px; }
+      .check-list li::before { position: absolute; left: 0; color: var(--gold); content: '✓'; font-weight: 900; }
+      .contact { display: flex; flex-direction: column; justify-content: center; padding: 25px; border: 1px solid rgba(47,115,255,.18); border-radius: 20px; background: #fff; }
+      .contact h2 { font-size: 1.5rem; }
+      .contact p { margin: 8px 0 20px; color: var(--muted); font-size: 14px; }
+      footer { padding: 28px 0 36px; background: #0d1320; color: rgba(255,255,255,.68); font-size: 13px; }
+      @media (max-width: 720px) { .nav-links { display: none; } .hero { padding-top: 50px; } .service-grid, .guide { grid-template-columns: 1fr; } .hero-actions .button { width: 100%; } }
+    </style>
+  </head>
+  <body>
+    <div class="topbar"><div class="container topbar-inner"><span>IPSIGuide 지역별 맞춤 입시 컨설팅</span><a href="form.html">상담 신청</a></div></div>
+    <header><div class="container nav"><a href="index.html" class="brand" aria-label="IPSIGuide 홈"><span class="brand-mark">I</span><span>IPSI<span>Guide</span></span></a><nav class="nav-links" aria-label="메인 메뉴"><a href="index.html#service">서비스</a><a href="index.html#process">진행 프로세스</a><a href="cities.html">지역별 안내</a><a href="index.html#faq">FAQ</a></nav></div></header>
+    <main id="content"><section class="hero"><div class="container"><div class="crumb"><a href="cities.html">지역별 안내</a>　/　<span id="region-label">지역</span></div><h1><span id="district-title">우리 지역</span> 입시 컨설팅 안내</h1><p><strong id="district-copy">우리 지역</strong> 학생의 내신과 목표 대학, 준비 시기에 맞춰 수시·정시 전략부터 면접·제시문 대비까지 현실적인 계획을 함께 설계합니다.</p><div class="hero-actions"><a id="consult-link" class="button" href="form.html">이 지역 무료 진단 신청</a><a class="button secondary" href="cities.html">다른 지역 보기</a></div></div></section><section><div class="container"><div class="section-head"><h2 id="service-heading">이 지역 학생에게 필요한 컨설팅</h2><p>현재 상황에 따라 필요한 영역을 우선순위로 정리합니다.</p></div><div class="service-grid"><article class="service"><div class="service-icon">◎</div><h3>수시·정시 지원 전략</h3><p>내신, 모의고사, 목표 대학을 기준으로 지원 가능 범위와 전형별 우선순위를 정리합니다.</p></article><article class="service"><div class="service-icon">↗</div><h3>면접·발표 실전 코칭</h3><p>지역과 학교 일정에 맞춰 질문 리스트, 답변 구조, 모의면접과 피드백을 진행합니다.</p></article><article class="service"><div class="service-icon">▤</div><h3>제시문·서류 준비</h3><p>제시문 핵심 논점과 학생의 활동을 연결해 설득력 있는 답변과 자료를 완성합니다.</p></article></div><div class="guide"><article class="panel"><h2><span id="guide-region">우리 지역</span>에서 이렇게 시작합니다</h2><p>상담 한 번으로 끝나는 정보 전달이 아니라, 다음 행동이 분명해지는 실행형 컨설팅을 지향합니다.</p><ul class="check-list"><li>학생의 현재 성적과 학년별 준비 상황 진단</li><li>목표 대학과 전형에 맞춘 지역별 지원 전략 정리</li><li>주차별 면접·제시문·서류 준비 체크</li><li>상담 후 학부모님께 진행 방향과 다음 목표 안내</li></ul></article><aside class="contact"><h2>지역이 달라도 기준은 같습니다</h2><p>거주 지역, 학년, 목표 대학을 알려주시면 지금 필요한 준비부터 안내해드립니다.</p><a class="button" href="form.html">상담 신청서 작성</a></aside></div></div></section></main>
+    <footer><div class="container">IPSIGuide · <span id="footer-region">지역별</span> 입시 컨설팅 안내　<a href="index.html">홈으로 돌아가기</a></div></footer>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const region = params.get('region') || '전국';
+      const district = params.get('district') || '우리 지역';
+      const regionText = document.querySelector('#region-label');
+      const districtText = document.querySelector('#district-title');
+      const districtCopy = document.querySelector('#district-copy');
+      const guideRegion = document.querySelector('#guide-region');
+      const footerRegion = document.querySelector('#footer-region');
+      regionText.textContent = region;
+      districtText.textContent = district;
+      districtCopy.textContent = `${region} ${district}`;
+      guideRegion.textContent = `${region} ${district}`;
+      footerRegion.textContent = `${region} ${district}`;
+      document.title = `${region} ${district} 입시 컨설팅 | IPSIGuide`;
+      document.querySelector('meta[name="description"]').setAttribute('content', `${region} ${district} 학생을 위한 수시·정시, 면접, 제시문 입시 컨설팅 안내입니다.`);
+      document.querySelector('#service-heading').textContent = `${region} ${district} 학생에게 필요한 컨설팅`;
+      document.querySelector('#consult-link').href = `form.html?region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}`;
+    </script>
+  </body>
+</html>
