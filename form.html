@@ -167,15 +167,18 @@
           <div class="sub">학생의 현재 상황을 바탕으로 가장 현실적인 입시 전략을 함께 설계합니다.</div>
         </div>
 
-        <form action="#" method="post">
+        <form action="https://formsubmit.co/sungyeub343@gmail.com" method="post">
+          <input type="hidden" name="_subject" value="무료 입시 진단 신청이 접수되었습니다">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://ipsiguide.kr/form.html?submitted=1">
           <div class="row">
             <label>
               학생 이름
-              <input type="text" name="student_name" placeholder="예: 김민준" />
+              <input type="text" name="student_name" placeholder="예: 김민준" required />
             </label>
             <label>
               학부모 연락처
-              <input type="tel" name="parent_phone" placeholder="예: 010-1234-5678" />
+              <input type="tel" name="parent_phone" placeholder="예: 010-1234-5678" required />
             </label>
           </div>
 
@@ -206,12 +209,12 @@
 
           <label>
             자택주소 정보 (동/호수까지 기재)
-            <textarea name="address" placeholder="예: 서울시 강남구 역삼동 123-45 101호"></textarea>
+            <textarea name="address" placeholder="예: 서울시 강남구 역삼동 123-45 101호" required></textarea>
           </label>
 
           <label>
             현재 상황
-            <textarea name="current_status" placeholder="예: 현재 학업 상황, 목표 대학, 희망 전형, 고민 사항 등을 자세히 적어주세요."></textarea>
+            <textarea name="current_status" placeholder="예: 현재 학업 상황, 목표 대학, 희망 전형, 고민 사항 등을 자세히 적어주세요." required></textarea>
           </label>
 
           <div class="actions">
