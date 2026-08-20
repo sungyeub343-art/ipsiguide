@@ -202,6 +202,9 @@
                 <option>면접 코칭</option>
                 <option>제시문 분석</option>
                 <option>인터뷰/발표</option>
+                  <option>내신대비 과외</option>
+                  <option>정시대비 과외</option>
+                  <option>논술과외</option>
                 <option>기타</option>
               </select>
             </label>
@@ -228,5 +231,12 @@
         </form>
       </div>
     </div>
+    <script>
+      const interest = new URLSearchParams(window.location.search).get('interest');
+      const interestSelect = document.querySelector('select[name="interest"]');
+      if (interest && [...interestSelect.options].some(option => option.value === interest)) {
+        interestSelect.value = interest;
+      }
+    </script>
   </body>
 </html>

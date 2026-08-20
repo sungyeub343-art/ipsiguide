@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지역 내신대비 과외 | IPSIGuide</title>
+    <meta name="description" content="지역별 국어, 영어, 수학, 사회탐구, 과학탐구 내신대비 과외 안내입니다." />
+    <style>
+      :root { --navy: #102044; --blue: #2f73ff; --mint: #e9faf4; --ink: #1d2433; --muted: #5f6b80; --line: #dfe7f5; --gold: #f3ba3b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: linear-gradient(180deg, #f7faff, #f2f8f7); line-height: 1.7; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar { padding: 11px 0; background: var(--navy); color: #fff; font-size: 13px; }
+      .topbar-inner, .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .topbar a { color: #fff; opacity: .86; }
+      header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(15,29,61,.08); }
+      .nav { min-height: 78px; }
+      .brand { display: flex; align-items: center; gap: 10px; color: var(--navy); font-weight: 800; font-size: 20px; }
+      .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--navy), var(--blue)); font-size: 14px; }
+      .brand span span { color: var(--blue); }
+      .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 14px; font-weight: 700; }
+      .category-menu { position: relative; }
+      .category-menu summary { cursor: pointer; list-style: none; color: var(--muted); }
+      .category-menu summary::-webkit-details-marker { display: none; }
+      .category-menu summary::after { content: '⌄'; margin-left: 5px; font-size: 12px; }
+      .category-dropdown { position: absolute; top: calc(100% + 18px); left: 50%; display: grid; min-width: 166px; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 16px 30px rgba(19,35,68,.12); transform: translateX(-50%); }
+      .category-dropdown a { padding: 9px 12px; border-radius: 8px; color: var(--muted); white-space: nowrap; }
+      .category-dropdown a:hover { background: var(--sky); color: var(--blue); }
+      .nav-links a[aria-current="page"] { color: var(--blue); }
+      .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, var(--blue), #1b4ba0); color: #fff; font-weight: 800; box-shadow: 0 12px 24px rgba(47,115,255,.2); white-space: nowrap; }
+      .hero { padding: 70px 0 55px; background: radial-gradient(circle at 90% 10%, rgba(25,169,116,.16), transparent 28%), linear-gradient(135deg, #f7faff, #e9f8f3); }
+      .crumb, .eyebrow { color: #14815e; font-size: 13px; font-weight: 800; }
+      .eyebrow { display: inline-block; padding: 7px 13px; border: 1px solid rgba(20,129,94,.18); border-radius: 999px; background: rgba(25,169,116,.08); }
+      h1 { max-width: 800px; margin: 17px 0 14px; color: var(--navy); font-size: clamp(2.2rem, 5vw, 4.1rem); line-height: 1.08; letter-spacing: -.06em; }
+      .hero p { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+      .secondary { border: 1px solid var(--line); background: #fff; color: var(--navy); box-shadow: none; }
+      main { padding: 44px 0 74px; }
+      .section-head { margin-bottom: 20px; }
+      h2 { margin: 0; color: var(--navy); font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -.04em; }
+      .section-head p { margin: 7px 0 0; color: var(--muted); }
+      .subject-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+      .subject { min-height: 154px; padding: 20px 16px; border: 1px solid rgba(15,29,61,.08); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 12px 26px rgba(19,35,68,.05); }
+      .subject strong { display: block; color: var(--blue); font-size: 1.3rem; }
+      .subject h3 { margin: 10px 0 5px; color: var(--navy); font-size: 1rem; }
+      .subject p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+      .guide { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 46px; }
+      .panel { padding: 25px; border-radius: 18px; background: var(--navy); color: #fff; }
+      .panel h2 { color: #fff; font-size: 1.5rem; }
+      .panel p { color: rgba(255,255,255,.78); font-size: 14px; }
+      .check-list { display: grid; gap: 10px; margin: 17px 0 0; padding: 0; list-style: none; color: rgba(255,255,255,.9); font-size: 14px; }
+      .check-list li::before { margin-right: 8px; color: var(--gold); content: '✓'; font-weight: 900; }
+      .contact { padding: 25px; border: 1px solid rgba(20,129,94,.18); border-radius: 18px; background: #fff; }
+      .contact p { margin: 8px 0 20px; color: var(--muted); font-size: 14px; }
+      footer { padding: 28px 0 36px; background: #0d1320; color: rgba(255,255,255,.68); font-size: 13px; }
+      @media (max-width: 850px) { .subject-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 620px) { .topbar-links, .nav-links { display: none; } .hero { padding-top: 52px; } .subject-grid, .guide { grid-template-columns: 1fr; } .hero-actions .button { width: 100%; } }
+    </style>
+  </head>
+  <body>
+    <div class="topbar"><div class="container topbar-inner"><span>IPSIGuide 지역별 내신대비 과외</span><a href="form.html?v=2">상담 신청</a></div></div>
+    <header><div class="container nav"><a href="index.html" class="brand" aria-label="IPSIGuide 홈"><span class="brand-mark">I</span><span>IPSI<span>Guide</span></span></a><nav class="nav-links" aria-label="메인 메뉴"><a href="index.html#service">서비스</a><details class="category-menu"><summary>과외 분야</summary><div class="category-dropdown"><a href="tutoring.html" aria-current="page">내신대비 과외</a><a href="jungsi-tutoring.html">정시대비 과외</a><a href="essay-tutoring.html">논술과외</a><a href="cities.html">입시컨설팅</a></div></details><a href="index.html#process">진행 프로세스</a><a href="index.html#faq">FAQ</a></nav><a class="button" href="form.html?v=2">상담 신청</a></div></header>
+    <section class="hero"><div class="container"><div class="crumb"><a href="tutoring.html">내신대비 과외</a>　/　<span id="region-label">지역</span></div><h1><span id="district-title">우리 지역</span><br /><span style="color: var(--blue);">내신대비 과외</span></h1><p><strong id="district-copy">우리 지역</strong> 학생의 학교 시험 범위와 학년, 현재 성적을 확인해 국어·영어·수학·탐구 과목별 학습 계획을 설계합니다.</p><div class="hero-actions"><a id="consult-link" class="button" href="form.html?v=2">이 지역 과외 상담 신청</a><a class="button secondary" href="tutoring.html">다른 지역 보기</a></div></div></section>
+    <main><div class="container"><div class="section-head"><h2><span id="subject-region">우리 지역</span> 과목별 내신 관리</h2><p>학교별 출제 범위와 학생의 취약 단원에 맞춰 수업 내용을 조정합니다.</p></div><div class="subject-grid"><article class="subject"><strong>국어</strong><h3>문학·비문학·문법</h3><p>교과서 핵심 정리와 지문 분석, 서술형 답안 훈련</p></article><article class="subject"><strong>영어</strong><h3>본문·어법·서술형</h3><p>교과서 암기보다 문장 구조와 변형 문제 대응 연습</p></article><article class="subject"><strong>수학</strong><h3>개념·유형·고난도</h3><p>개념 빈틈을 보완하고 학교별 시험 유형과 오답 관리</p></article><article class="subject"><strong>사탐</strong><h3>개념·자료 분석</h3><p>사회탐구 핵심 개념을 연결하고 자료·선지 판단력 강화</p></article><article class="subject"><strong>과탐</strong><h3>개념·실험·계산</h3><p>과학탐구 개념 이해와 자료 해석, 계산 문항 대비</p></article></div><div class="guide"><article class="panel"><h2><span id="guide-region">우리 지역</span> 수업 운영</h2><p>시험 직전 몰아치기가 아니라 다음 시험까지의 학습 흐름을 함께 관리합니다.</p><ul class="check-list"><li>학교·학년별 시험 범위와 일정 확인</li><li>국어·영어·수학·탐구별 진단</li><li>주차별 개념·문제풀이·오답 계획</li><li>시험 전 서술형과 실전 모의 점검</li></ul></article><aside class="contact"><h2>학생에게 맞는 과목부터 상담</h2><p>지역, 학년, 학교, 희망 과목을 남겨주시면 필요한 수업 방향과 학습 계획을 안내합니다.</p><a id="contact-link" class="button" href="form.html?v=2">무료 진단 신청</a></aside></div></div></main>
+    <footer><div class="container">IPSIGuide · <span id="footer-region">지역별</span> 내신대비 과외 안내　<a href="index.html">홈으로 돌아가기</a></div></footer>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const region = params.get('region') || '전국';
+      const district = params.get('district') || '우리 지역';
+      const fullRegion = `${region} ${district}`;
+      document.querySelector('#region-label').textContent = region;
+      document.querySelector('#district-title').textContent = fullRegion;
+      document.querySelector('#district-copy').textContent = fullRegion;
+      document.querySelector('#subject-region').textContent = fullRegion;
+      document.querySelector('#guide-region').textContent = fullRegion;
+      document.querySelector('#footer-region').textContent = fullRegion;
+      document.title = `${fullRegion} 내신대비 과외 | IPSIGuide`;
+      document.querySelector('meta[name="description"]').setAttribute('content', `${fullRegion} 국어, 영어, 수학, 사회탐구, 과학탐구 내신대비 과외 안내입니다.`);
+      const query = `?v=2&interest=${encodeURIComponent('내신대비 과외')}&region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}`;
+      document.querySelector('#consult-link').href = `form.html${query}`;
+      document.querySelector('#contact-link').href = `form.html${query}`;
+    </script>
+  </body>
+</html>

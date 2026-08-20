@@ -140,6 +140,14 @@
         color: var(--gray-600);
       }
 
+      .category-menu { position: relative; }
+      .category-menu summary { cursor: pointer; list-style: none; color: var(--gray-600); }
+      .category-menu summary::-webkit-details-marker { display: none; }
+      .category-menu summary::after { content: '⌄'; margin-left: 5px; font-size: 12px; }
+      .category-dropdown { position: absolute; top: calc(100% + 18px); left: 50%; display: grid; min-width: 166px; padding: 8px; border: 1px solid var(--gray-200); border-radius: 12px; background: #fff; box-shadow: 0 16px 30px rgba(19,35,68,.12); transform: translateX(-50%); }
+      .category-dropdown a { padding: 9px 12px; border-radius: 8px; color: var(--gray-600); white-space: nowrap; }
+      .category-dropdown a:hover { background: var(--sky-100); color: var(--blue-600); }
+
       .nav-links a {
         color: var(--gray-600);
       }
@@ -932,8 +940,16 @@
 
         <nav class="nav-links" aria-label="메인 메뉴">
           <a href="#service">서비스</a>
+          <details class="category-menu">
+            <summary>과외 분야</summary>
+            <div class="category-dropdown">
+              <a href="tutoring.html">내신대비 과외</a>
+              <a href="jungsi-tutoring.html">정시대비 과외</a>
+              <a href="essay-tutoring.html">논술과외</a>
+              <a href="cities.html">입시컨설팅</a>
+            </div>
+          </details>
           <a href="#process">진행 프로세스</a>
-          <a href="cities.html">지역별 안내</a>
           <a href="#results">성과</a>
           <a href="#faq">자주 묻는 질문</a>
         </nav>

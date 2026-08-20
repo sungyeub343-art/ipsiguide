@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전국 정시대비 과외 | IPSIGuide</title>
+    <meta name="description" content="전국 시군구별 수능 국어, 수학, 영어, 탐구 정시대비 과외 안내입니다." />
+    <style>
+      :root { --navy: #102044; --blue: #2f73ff; --ink: #1d2433; --muted: #5f6b80; --line: #dfe7f5; --orange: #f08a4b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: linear-gradient(180deg, #fffaf5, #f3f6ff); line-height: 1.7; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar { padding: 11px 0; background: var(--navy); color: #fff; font-size: 13px; }
+      .topbar-inner, .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .topbar a { color: #fff; opacity: .86; }
+      header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(15,29,61,.08); }
+      .nav { min-height: 78px; }
+      .brand { display: flex; align-items: center; gap: 10px; color: var(--navy); font-weight: 800; font-size: 20px; }
+      .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--navy), var(--blue)); font-size: 14px; }
+      .brand span span { color: var(--blue); }
+      .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 14px; font-weight: 700; }
+      .category-menu { position: relative; }
+      .category-menu summary { cursor: pointer; list-style: none; color: var(--muted); }
+      .category-menu summary::-webkit-details-marker { display: none; }
+      .category-menu summary::after { content: '⌄'; margin-left: 5px; font-size: 12px; }
+      .category-dropdown { position: absolute; top: calc(100% + 18px); left: 50%; display: grid; min-width: 166px; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 16px 30px rgba(19,35,68,.12); transform: translateX(-50%); }
+      .category-dropdown a { padding: 9px 12px; border-radius: 8px; color: var(--muted); white-space: nowrap; }
+      .category-dropdown a:hover { background: #fff1f4; color: var(--orange); }
+      .nav-links a[aria-current="page"] { color: var(--blue); }
+      .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, var(--orange), #d95c35); color: #fff; font-weight: 800; box-shadow: 0 12px 24px rgba(240,138,75,.2); white-space: nowrap; }
+      .hero { padding: 72px 0 58px; background: radial-gradient(circle at 90% 10%, rgba(240,138,75,.18), transparent 28%), linear-gradient(135deg, #fffaf5, #f2f5ff); }
+      .eyebrow { display: inline-block; padding: 7px 13px; border: 1px solid rgba(240,138,75,.24); border-radius: 999px; color: #c35a2c; background: rgba(240,138,75,.09); font-size: 13px; font-weight: 800; }
+      h1 { max-width: 800px; margin: 17px 0 14px; color: var(--navy); font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: 1.08; letter-spacing: -.06em; }
+      .hero p { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+      main { padding: 44px 0 74px; }
+      .intro { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; margin-bottom: 45px; }
+      .intro-card, .region-card { padding: 24px; border: 1px solid rgba(15,29,61,.08); border-radius: 18px; background: rgba(255,255,255,.9); box-shadow: 0 12px 26px rgba(19,35,68,.05); }
+      .intro-card h2 { margin: 0 0 7px; color: var(--navy); font-size: 1.45rem; }
+      .intro-card p { margin: 0; color: var(--muted); font-size: 14px; }
+      .focus-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; color: var(--navy); font-size: 14px; font-weight: 700; }
+      .focus-list li::before { margin-right: 8px; color: var(--orange); content: '✓'; }
+      .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 20px; }
+      h2 { margin: 0; color: var(--navy); font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -.04em; }
+      .section-head p { max-width: 450px; margin: 0; color: var(--muted); font-size: 14px; }
+      .region-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      .region-card h3 { margin: 0 0 3px; color: var(--navy); font-size: 1.2rem; }
+      .region-count { color: var(--muted); font-size: 12px; }
+      .district-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+      .district-list a { padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; color: #43516b; background: #fbfdff; font-size: 13px; transition: .2s ease; }
+      .district-list a:hover { border-color: var(--orange); color: #c35a2c; transform: translateY(-1px); }
+      .cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 48px; padding: 28px; border-radius: 20px; background: linear-gradient(135deg, #c35a2c, var(--navy)); color: #fff; }
+      .cta h2 { color: #fff; font-size: 1.55rem; }
+      .cta p { margin: 6px 0 0; color: rgba(255,255,255,.76); font-size: 14px; }
+      footer { padding: 28px 0 36px; background: #0d1320; color: rgba(255,255,255,.68); font-size: 13px; }
+      @media (max-width: 850px) { .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .intro { grid-template-columns: 1fr; } }
+      @media (max-width: 620px) { .topbar-links, .nav-links { display: none; } .hero { padding-top: 52px; } .region-grid { grid-template-columns: 1fr; } .section-head, .cta { display: block; } .section-head p { margin-top: 10px; } .cta .button { width: 100%; margin-top: 18px; } }
+    </style>
+  </head>
+  <body>
+    <div class="topbar"><div class="container topbar-inner"><span>IPSIGuide 전국 정시대비 과외</span><div class="topbar-links"><a href="index.html">홈</a>　<a href="form.html?v=2">상담 신청</a></div></div></div>
+    <header><div class="container nav"><a href="index.html" class="brand" aria-label="IPSIGuide 홈"><span class="brand-mark">I</span><span>IPSI<span>Guide</span></span></a><nav class="nav-links" aria-label="메인 메뉴"><a href="index.html#service">서비스</a><details class="category-menu"><summary>과외 분야</summary><div class="category-dropdown"><a href="tutoring.html">내신대비 과외</a><a href="jungsi-tutoring.html" aria-current="page">정시대비 과외</a><a href="essay-tutoring.html">논술과외</a><a href="cities.html">입시컨설팅</a></div></details><a href="index.html#process">진행 프로세스</a><a href="index.html#faq">FAQ</a></nav><a class="button" href="form.html?v=2">상담 신청</a></div></header>
+    <section class="hero"><div class="container"><span class="eyebrow">지역별 수능·정시 관리</span><h1>전국 어디서나,<br /><span style="color: var(--orange);">정시대비 과외</span>를 시작하세요</h1><p>수능 성적과 목표 대학, 선택 과목을 분석해 과목별 학습 우선순위와 실전 계획을 설계합니다. 아래에서 시·도와 시군구를 선택하면 지역별 상담 페이지로 이동합니다.</p></div></section>
+    <main><div class="container"><div class="intro"><article class="intro-card"><h2>정시대비 과외는 이렇게 진행합니다</h2><p>현재 모의고사 성적을 기준으로 취약 영역을 진단하고, 목표 대학의 수능 반영 방식과 남은 기간에 맞춰 학습량을 조정합니다.</p></article><article class="intro-card"><ul class="focus-list"><li>최근 모의고사 성적과 등급 추이 분석</li><li>수능 과목별 취약 단원 진단</li><li>주간 문제풀이·오답·실전 관리</li><li>목표 대학 정시 지원 전략 점검</li></ul></article></div><div class="section-head"><div><h2>지역을 선택하세요</h2></div><p>시·도 아래에서 시·군·구를 선택하면 해당 지역의 정시대비 과외 상담 페이지를 확인할 수 있습니다.</p></div><div id="region-grid" class="region-grid"></div><div class="cta"><div><h2>목표 대학과 과목이 아직 막막한가요?</h2><p>현재 성적과 거주 지역만 남겨도 정시 준비의 우선순위부터 안내해드립니다.</p></div><a class="button" style="background:#fff;color:var(--navy);box-shadow:none;" href="form.html?v=2&interest=%EC%A0%95%EC%8B%9C%EB%8C%80%EB%B9%84%20%EA%B3%BC%EC%99%B8">무료 진단 신청</a></div></div></main>
+    <footer><div class="container">IPSIGuide · 전국 정시대비 과외 안내　<a href="index.html">홈으로 돌아가기</a></div></footer>
+    <script src="regions.js"></script>
+    <script>
+      const encode = value => encodeURIComponent(value);
+      document.querySelector('#region-grid').innerHTML = Object.entries(window.ipsiRegions).map(([region, districts]) => `<article class="region-card"><h3>${region}</h3><span class="region-count">${districts.length}개 지역 안내</span><div class="district-list">${districts.map(district => `<a href="jungsi-tutoring-district.html?region=${encode(region)}&district=${encode(district)}">${district}</a>`).join('')}</div></article>`).join('');
+    </script>
+  </body>
+</html>

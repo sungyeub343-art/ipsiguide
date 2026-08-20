@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지역 논술과외 | IPSIGuide</title>
+    <meta name="description" content="지역별 대학 논술과외, 제시문 분석, 답안 작성과 첨삭 수업 안내입니다." />
+    <style>
+      :root { --navy: #102044; --coral: #e85d75; --ink: #1d2433; --muted: #5f6b80; --line: #dfe7f5; --gold: #f3ba3b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: linear-gradient(180deg, #fff8fa, #f3f6ff); line-height: 1.7; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar { padding: 11px 0; background: var(--navy); color: #fff; font-size: 13px; }
+      .topbar-inner, .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .topbar a { color: #fff; opacity: .86; }
+      header { position: sticky; top: 0; z-index: 2; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(15,29,61,.08); }
+      .nav { min-height: 78px; }
+      .brand { display: flex; align-items: center; gap: 10px; color: var(--navy); font-weight: 800; font-size: 20px; }
+      .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #fff; background: linear-gradient(135deg, var(--navy), var(--coral)); font-size: 14px; }
+      .brand span span { color: var(--coral); }
+      .nav-links { display: flex; gap: 19px; color: var(--muted); font-size: 14px; font-weight: 700; }
+      .category-menu { position: relative; }
+      .category-menu summary { cursor: pointer; list-style: none; color: var(--muted); }
+      .category-menu summary::-webkit-details-marker { display: none; }
+      .category-menu summary::after { content: '⌄'; margin-left: 5px; font-size: 12px; }
+      .category-dropdown { position: absolute; top: calc(100% + 18px); left: 50%; display: grid; min-width: 166px; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: 0 16px 30px rgba(19,35,68,.12); transform: translateX(-50%); }
+      .category-dropdown a { padding: 9px 12px; border-radius: 8px; color: var(--muted); white-space: nowrap; }
+      .category-dropdown a:hover { background: #fff1f4; color: var(--coral); }
+      .nav-links a[aria-current="page"] { color: var(--coral); }
+      .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, var(--coral), #bd3f60); color: #fff; font-weight: 800; box-shadow: 0 12px 24px rgba(232,93,117,.2); white-space: nowrap; }
+      .secondary { border: 1px solid var(--line); background: #fff; color: var(--navy); box-shadow: none; }
+      .hero { padding: 70px 0 55px; background: radial-gradient(circle at 90% 10%, rgba(232,93,117,.17), transparent 28%), linear-gradient(135deg, #fff8fa, #f3f5ff); }
+      .crumb { color: #bd3f60; font-size: 13px; font-weight: 800; }
+      h1 { max-width: 800px; margin: 15px 0 14px; color: var(--navy); font-size: clamp(2.1rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -.06em; }
+      .hero p { max-width: 730px; margin: 0; color: var(--muted); font-size: 1.06rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px; }
+      main { padding: 45px 0 72px; }
+      .section-head { margin-bottom: 20px; }
+      h2 { margin: 0; color: var(--navy); font-size: clamp(1.65rem, 3vw, 2.4rem); letter-spacing: -.04em; }
+      .section-head p { margin: 8px 0 0; color: var(--muted); }
+      .subject-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+      .subject { min-height: 160px; padding: 21px 17px; border: 1px solid rgba(15,29,61,.08); border-radius: 16px; background: rgba(255,255,255,.9); box-shadow: 0 12px 26px rgba(19,35,68,.05); }
+      .subject strong { display: block; color: var(--coral); font-size: 1.2rem; }
+      .subject h3 { margin: 10px 0 5px; color: var(--navy); font-size: 1rem; }
+      .subject p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+      .guide { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 46px; }
+      .panel { padding: 25px; border-radius: 18px; background: var(--navy); color: #fff; }
+      .panel h2 { color: #fff; font-size: 1.5rem; }
+      .panel p { color: rgba(255,255,255,.78); font-size: 14px; }
+      .check-list { display: grid; gap: 10px; margin: 17px 0 0; padding: 0; list-style: none; color: rgba(255,255,255,.9); font-size: 14px; }
+      .check-list li::before { margin-right: 8px; color: var(--gold); content: '✓'; font-weight: 900; }
+      .contact { padding: 25px; border: 1px solid rgba(232,93,117,.2); border-radius: 18px; background: #fff; }
+      .contact p { margin: 8px 0 20px; color: var(--muted); font-size: 14px; }
+      footer { padding: 28px 0 36px; background: #0d1320; color: rgba(255,255,255,.68); font-size: 13px; }
+      @media (max-width: 850px) { .subject-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 620px) { .topbar-links, .nav-links { display: none; } .hero { padding-top: 50px; } .subject-grid, .guide { grid-template-columns: 1fr; } .hero-actions .button { width: 100%; } }
+    </style>
+  </head>
+  <body>
+    <div class="topbar"><div class="container topbar-inner"><span>IPSIGuide 지역별 논술과외</span><a href="form.html?v=2">상담 신청</a></div></div>
+    <header><div class="container nav"><a href="index.html" class="brand" aria-label="IPSIGuide 홈"><span class="brand-mark">I</span><span>IPSI<span>Guide</span></span></a><nav class="nav-links" aria-label="메인 메뉴"><a href="index.html#service">서비스</a><details class="category-menu"><summary>과외 분야</summary><div class="category-dropdown"><a href="tutoring.html">내신대비 과외</a><a href="jungsi-tutoring.html">정시대비 과외</a><a href="essay-tutoring.html" aria-current="page">논술과외</a><a href="cities.html">입시컨설팅</a></div></details><a href="index.html#process">진행 프로세스</a><a href="index.html#faq">FAQ</a></nav><a class="button" href="form.html?v=2">상담 신청</a></div></header>
+    <section class="hero"><div class="container"><div class="crumb"><a href="essay-tutoring.html">논술과외</a>　/　<span id="region-label">지역</span></div><h1><span id="district-title">우리 지역</span><br /><span style="color: var(--coral);">논술과외</span></h1><p><strong id="district-copy">우리 지역</strong> 학생의 목표 대학과 논술 유형에 맞춰 제시문 분석, 논리적 개요 구성, 답안 작성과 첨삭을 단계별로 진행합니다.</p><div class="hero-actions"><a id="consult-link" class="button" href="form.html?v=2">이 지역 논술 상담 신청</a><a class="button secondary" href="essay-tutoring.html">다른 지역 보기</a></div></div></section>
+    <main><div class="container"><div class="section-head"><h2><span id="subject-region">우리 지역</span> 논술 유형별 관리</h2><p>지원 대학의 논술 출제 방식과 학생의 글쓰기 수준에 맞춰 수업 내용을 조정합니다.</p></div><div class="subject-grid"><article class="subject"><strong>제시문 독해</strong><h3>핵심 논점 찾기</h3><p>제시문의 관계와 출제 의도를 파악해 문제의 요구를 정확히 해석합니다.</p></article><article class="subject"><strong>답안 구성</strong><h3>개요·논리·근거</h3><p>주장과 근거를 연결하고 문단별 역할이 분명한 답안 구조를 만듭니다.</p></article><article class="subject"><strong>인문·사회</strong><h3>비교·분석·비판</h3><p>자료 비교와 관점 분석을 통해 대학별 인문사회 논술에 대응합니다.</p></article><article class="subject"><strong>수리 논술</strong><h3>풀이·증명·서술</h3><p>수학적 풀이 과정을 논리적으로 설명하고 부분 점수를 확보하는 답안을 훈련합니다.</p></article></div><div class="guide"><article class="panel"><h2><span id="guide-region">우리 지역</span> 수업 운영</h2><p>작성과 첨삭을 반복하며 학생이 스스로 논점을 세우고 제한 시간 안에 완성하도록 지도합니다.</p><ul class="check-list"><li>목표 대학별 기출과 논술 유형 분석</li><li>제시문 독해와 문제 요구사항 정리</li><li>문단 구성과 논리적 문장 표현 훈련</li><li>실전 모의논술, 시간 관리와 1:1 첨삭</li></ul></article><aside class="contact"><h2>목표 대학부터 상담</h2><p>지역, 학년, 목표 대학, 인문·수리 논술 여부를 알려주시면 현재 수준에 맞는 준비 순서를 안내합니다.</p><a id="contact-link" class="button" href="form.html?v=2">무료 진단 신청</a></aside></div></div></main>
+    <footer><div class="container">IPSIGuide · <span id="footer-region">지역별</span> 논술과외 안내　<a href="index.html">홈으로 돌아가기</a></div></footer>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const region = params.get('region') || '전국';
+      const district = params.get('district') || '우리 지역';
+      const fullRegion = `${region} ${district}`;
+      document.querySelector('#region-label').textContent = region;
+      document.querySelector('#district-title').textContent = fullRegion;
+      document.querySelector('#district-copy').textContent = fullRegion;
+      document.querySelector('#subject-region').textContent = fullRegion;
+      document.querySelector('#guide-region').textContent = fullRegion;
+      document.querySelector('#footer-region').textContent = fullRegion;
+      document.title = `${fullRegion} 논술과외 | IPSIGuide`;
+      document.querySelector('meta[name="description"]').setAttribute('content', `${fullRegion} 대학 논술과외, 제시문 분석, 답안 작성과 첨삭 수업 안내입니다.`);
+      const query = `?v=2&interest=${encodeURIComponent('논술과외')}&region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}`;
+      document.querySelector('#consult-link').href = `form.html${query}`;
+      document.querySelector('#contact-link').href = `form.html${query}`;
+    </script>
+  </body>
+</html>
