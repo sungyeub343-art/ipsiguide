@@ -72,7 +72,7 @@
       const region = params.get('region') || '전국';
       const district = params.get('district') || '우리 지역';
       const subdistrict = params.get('subdistrict');
-      const subregions = window.ipsiSubregions[district] || [];
+      const subregions = window.ipsiSubregions[`${region} ${district}`] || window.ipsiSubregions[district] || [];
       const pageName = subdistrict ? `${district} ${subdistrict}` : district;
       const regionText = document.querySelector('#region-label');
       const districtText = document.querySelector('#district-title');
