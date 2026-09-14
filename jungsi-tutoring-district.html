@@ -44,6 +44,10 @@
       .subject strong { display: block; color: var(--orange); font-size: 1.3rem; }
       .subject h3 { margin: 10px 0 5px; color: var(--navy); font-size: 1rem; }
       .subject p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+      .subregion-section { margin-top: 45px; }
+      .subregion-list { display: flex; flex-wrap: wrap; gap: 8px; }
+      .subregion-list a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 9px; color: var(--navy); background: #fff; font-size: 13px; font-weight: 700; transition: .2s ease; }
+      .subregion-list a:hover, .subregion-list a[aria-current="page"] { border-color: var(--orange); color: #c35a2c; background: #fff1f4; }
       .guide { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 46px; }
       .panel { padding: 25px; border-radius: 18px; background: var(--navy); color: #fff; }
       .panel h2 { color: #fff; font-size: 1.5rem; }
@@ -61,13 +65,19 @@
     <div class="topbar"><div class="container topbar-inner"><span>IPSIGuide 지역별 정시대비 과외</span><a href="form.html?v=2">상담 신청</a></div></div>
     <header><div class="container nav"><a href="index.html" class="brand" aria-label="IPSIGuide 홈"><span class="brand-mark">I</span><span>IPSI<span>Guide</span></span></a><nav class="nav-links" aria-label="메인 메뉴"><a href="index.html#service">서비스</a><details class="category-menu"><summary>과외 분야</summary><div class="category-dropdown"><a href="tutoring.html">내신대비 과외</a><a href="jungsi-tutoring.html" aria-current="page">정시대비 과외</a><a href="essay-tutoring.html">논술과외</a><a href="cities.html">입시컨설팅</a></div></details><a href="index.html#process">진행 프로세스</a><a href="index.html#faq">FAQ</a></nav><a class="button" href="form.html?v=2">상담 신청</a></div></header>
     <section class="hero"><div class="container"><div class="crumb"><a href="jungsi-tutoring.html">정시대비 과외</a>　/　<span id="region-label">지역</span></div><h1><span id="district-title">우리 지역</span><br /><span style="color: var(--orange);">정시대비 과외</span></h1><p><strong id="district-copy">우리 지역</strong> 학생의 모의고사 성적, 목표 대학, 선택 과목을 분석해 수능 국어·수학·영어·탐구별 학습 계획을 설계합니다.</p><div class="hero-actions"><a id="consult-link" class="button" href="form.html?v=2">이 지역 정시 상담 신청</a><a class="button secondary" href="jungsi-tutoring.html">다른 지역 보기</a></div></div></section>
-    <main><div class="container"><div class="section-head"><h2><span id="subject-region">우리 지역</span> 수능 과목별 관리</h2><p>현재 성적과 목표 등급을 기준으로 취약 영역부터 실전까지 관리합니다.</p></div><div class="subject-grid"><article class="subject"><strong>국어</strong><h3>독서·문학·언매</h3><p>지문 독해 구조와 시간 배분, 선택 과목 실전 훈련</p></article><article class="subject"><strong>수학</strong><h3>공통·미적·확통·기하</h3><p>개념 공백을 보완하고 준킬러·킬러 대응력을 강화</p></article><article class="subject"><strong>영어</strong><h3>독해·어휘·듣기</h3><p>빈출 유형과 어휘를 정리하고 안정적인 등급 관리</p></article><article class="subject"><strong>사탐</strong><h3>개념·자료·시간 관리</h3><p>사회탐구 선택 과목 개념과 자료 분석, 실전 모의 대비</p></article><article class="subject"><strong>과탐</strong><h3>개념·계산·실험</h3><p>과학탐구 선택 과목의 개념 연결과 고난도 문항 훈련</p></article></div><div class="guide"><article class="panel"><h2><span id="guide-region">우리 지역</span> 수업 운영</h2><p>단순 문제풀이가 아니라 점수 변화와 목표 대학을 함께 보며 주간 학습량을 조정합니다.</p><ul class="check-list"><li>최근 모의고사와 전국연합 성적 분석</li><li>수능 과목별 취약 단원과 오답 유형 진단</li><li>주간 개념·기출·실전 문제풀이 계획</li><li>목표 대학 정시 반영 방식과 지원 전략 점검</li></ul></article><aside class="contact"><h2>목표 등급부터 상담</h2><p>지역, 학년, 목표 대학, 희망 과목을 알려주시면 현재 성적에 맞는 정시 준비 방향을 안내합니다.</p><a id="contact-link" class="button" href="form.html?v=2">무료 진단 신청</a></aside></div></div></main>
+    <main><div class="container"><div class="section-head"><h2><span id="subject-region">우리 지역</span> 수능 과목별 관리</h2><p>현재 성적과 목표 등급을 기준으로 취약 영역부터 실전까지 관리합니다.</p></div><div class="subject-grid"><article class="subject"><strong>국어</strong><h3>독서·문학·언매</h3><p>지문 독해 구조와 시간 배분, 선택 과목 실전 훈련</p></article><article class="subject"><strong>수학</strong><h3>공통·미적·확통·기하</h3><p>개념 공백을 보완하고 준킬러·킬러 대응력을 강화</p></article><article class="subject"><strong>영어</strong><h3>독해·어휘·듣기</h3><p>빈출 유형과 어휘를 정리하고 안정적인 등급 관리</p></article><article class="subject"><strong>사탐</strong><h3>개념·자료·시간 관리</h3><p>사회탐구 선택 과목 개념과 자료 분석, 실전 모의 대비</p></article><article class="subject"><strong>과탐</strong><h3>개념·계산·실험</h3><p>과학탐구 선택 과목의 개념 연결과 고난도 문항 훈련</p></article></div><div id="subregion-section" class="subregion-section"><div class="section-head"><h2><span id="subregion-heading">이 지역</span> 동·읍·면 선택</h2><p>거주 또는 상담 희망 지역을 선택하면 해당 지역 정시대비 과외 안내를 확인할 수 있습니다.</p></div><div id="subregion-list" class="subregion-list"></div></div><div class="guide"><article class="panel"><h2><span id="guide-region">우리 지역</span> 수업 운영</h2><p>단순 문제풀이가 아니라 점수 변화와 목표 대학을 함께 보며 주간 학습량을 조정합니다.</p><ul class="check-list"><li>최근 모의고사와 전국연합 성적 분석</li><li>수능 과목별 취약 단원과 오답 유형 진단</li><li>주간 개념·기출·실전 문제풀이 계획</li><li>목표 대학 정시 반영 방식과 지원 전략 점검</li></ul></article><aside class="contact"><h2>목표 등급부터 상담</h2><p>지역, 학년, 목표 대학, 희망 과목을 알려주시면 현재 성적에 맞는 정시 준비 방향을 안내합니다.</p><a id="contact-link" class="button" href="form.html?v=2">무료 진단 신청</a></aside></div></div></main>
     <footer><div class="container">IPSIGuide · <span id="footer-region">지역별</span> 정시대비 과외 안내　<a href="index.html">홈으로 돌아가기</a></div></footer>
+    <script src="regions.js"></script>
+    <script src="all-subregions.js"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const region = params.get('region') || '전국';
       const district = params.get('district') || '우리 지역';
-      const fullRegion = `${region} ${district}`;
+      const subdistrict = params.get('subdistrict');
+      const districtKey = `${region} ${district}`;
+      const subregions = window.ipsiSubregions[districtKey] || window.ipsiSubregions[district] || [];
+      const pageName = subdistrict ? `${district} ${subdistrict}` : district;
+      const fullRegion = `${region} ${pageName}`;
       document.querySelector('#region-label').textContent = region;
       document.querySelector('#district-title').textContent = fullRegion;
       document.querySelector('#district-copy').textContent = fullRegion;
@@ -76,9 +86,12 @@
       document.querySelector('#footer-region').textContent = fullRegion;
       document.title = `${fullRegion} 정시대비 과외 | IPSIGuide`;
       document.querySelector('meta[name="description"]').setAttribute('content', `${fullRegion} 수능 국어, 수학, 영어, 사회탐구, 과학탐구 정시대비 과외 안내입니다.`);
-      const query = `?v=2&interest=${encodeURIComponent('정시대비 과외')}&region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}`;
+      const query = `?v=2&interest=${encodeURIComponent('정시대비 과외')}&region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}${subdistrict ? `&subdistrict=${encodeURIComponent(subdistrict)}` : ''}`;
       document.querySelector('#consult-link').href = `form.html${query}`;
       document.querySelector('#contact-link').href = `form.html${query}`;
+      document.querySelector('#subregion-heading').textContent = `${region} ${district}`;
+      document.querySelector('#subregion-section').hidden = subregions.length === 0;
+      document.querySelector('#subregion-list').innerHTML = subregions.map(name => `<a href="jungsi-tutoring-district.html?region=${encodeURIComponent(region)}&district=${encodeURIComponent(district)}&subdistrict=${encodeURIComponent(name)}"${name === subdistrict ? ' aria-current="page"' : ''}>${name}</a>`).join('');
     </script>
   </body>
 </html>
