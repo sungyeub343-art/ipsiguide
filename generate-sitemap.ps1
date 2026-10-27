@@ -10,13 +10,15 @@ $servicePages = @(
   'cities.html',
   'tutoring.html',
   'essay-tutoring.html',
-  'jungsi-tutoring.html'
+  'jungsi-tutoring.html',
+  'record-management.html'
 )
 $districtPages = @(
   'district.html',
   'tutoring-district.html',
   'essay-tutoring-district.html',
-  'jungsi-tutoring-district.html'
+  'jungsi-tutoring-district.html',
+  'record-management-district.html'
 )
 
 $urls = [System.Collections.Generic.List[string]]::new()
